@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+
+
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="p1ScoreBoard" type="Label" parent="."]
+margin_left = 830.0
+margin_top = 30.0
+margin_right = 935.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+text = "99"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p2ScoreBoard" type="Label" parent="."]
+margin_left = 990.0
+margin_top = 30.0
+margin_right = 1095.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+text = "99"
+align = 1
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="."]
+margin_left = 930.0
+margin_top = 460.0
+margin_right = 1010.0
+margin_bottom = 530.0
+custom_fonts/font = ExtResource( 1 )
+text = "10"
+align = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
