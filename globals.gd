@@ -1,3 +1,9 @@
 extends Node
 
-var otherPlayerId = -1
+var otherPlayerIds = []
+
+func addPlayer(id):
+	otherPlayerIds.append(id)
+
+func getPlayer(index):
+	return otherPlayerIds[index]

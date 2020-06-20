@@ -22,7 +22,7 @@ func _ready():
 
 func _player_connected(id):
 	update_status("Player connected to server!")
-	globals.otherPlayerId = id
+	globals.addPlayer(id)
 	var game = preload("res://Levels/2pArena/2pArena.tscn").instance()
 	get_tree().get_root().add_child(game)
 	hide()

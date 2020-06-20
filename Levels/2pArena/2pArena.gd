@@ -15,13 +15,13 @@ func _ready():
 	
 	#Loading other player
 	var otherPlayer = preload("res://Game_Objects/networkPaddle/networkPaddle.tscn").instance()
-	otherPlayer.set_name(str(globals.otherPlayerID))
-	otherPlayer.set_network_master(globals.otherPlayerID)
+	otherPlayer.set_name(str(globals.getPlayer(0)))
+	otherPlayer.set_network_master(globals.getPlayer(0))
 	add_child(otherPlayer)
 	if get_tree().is_network_server():
-		otherPlayer.position = $p2Spawn
+		otherPlayer.position = $p2Spawn.position
 	else:
-		otherPlayer.position = $p1Spawn
+		otherPlayer.position = $p1Spawn.position
 
 
 func _input(event):
