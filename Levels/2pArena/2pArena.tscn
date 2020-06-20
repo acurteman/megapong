@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Game_Objects/Ball/Ball.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Game_Objects/MidLine.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game_Objects/Backboard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game_Objects/Backboard.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game_Objects/Ball/Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game_Objects/MidLine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game_Objects/Wall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/2pArena/2pArena.gd" type="Script" id=13]
 
@@ -42,7 +42,7 @@ collision_mask = 3
 [node name="Backboard1" parent="." groups=[
 "backboard",
 "p1Backboard",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 3 )]
 position = Vector2( -20, 0 )
 collision_layer = 8
 collision_mask = 3
@@ -50,7 +50,7 @@ collision_mask = 3
 [node name="Backboard2" parent="." groups=[
 "backboard",
 "p2Backboard",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 3 )]
 position = Vector2( 1920, 0 )
 collision_layer = 8
 collision_mask = 3
@@ -58,11 +58,11 @@ collision_mask = 3
 [node name="BallSpawn" type="Position2D" parent="."]
 position = Vector2( 960, 540 )
 
-[node name="MidLine" parent="." instance=ExtResource( 3 )]
+[node name="MidLine" parent="." instance=ExtResource( 5 )]
 position = Vector2( 960, 510 )
 collision_layer = 16
 
-[node name="Ball" parent="." instance=ExtResource( 2 )]
+[node name="Ball" parent="." instance=ExtResource( 4 )]
 position = Vector2( 50.9645, -67.1359 )
 
 [node name="quitButton" type="Button" parent="."]
@@ -76,5 +76,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HUD" parent="." instance=ExtResource( 4 )]
+[node name="HUD" parent="." instance=ExtResource( 2 )]
 [connection signal="pressed" from="quitButton" to="." method="_on_quitButton_pressed"]

@@ -22,7 +22,7 @@ func _physics_process(delta):
 	velocity.y = lerp(velocity.y, -int(UP) + int(DOWN), lerp_var)
 	
 	# Move and check for collision
-	var collision = move_and_slide(velocity*speed)
+	var collision = move_and_collide(velocity*speed)
 	
 	# If there is collision, bounce paddle away
 	if collision:
