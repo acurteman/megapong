@@ -14,6 +14,8 @@ func _process(delta):
 func _on_exitButton_pressed():
 	get_tree().quit()
 
-
 func _on_singlePlayer_pressed():
 	get_tree().change_scene("res://Levels/Arena/Arena.tscn")
+
+func _on_multiPlayer_pressed():
+	get_tree().change_scene("res://Levels/mpMenu/mpMenu.tscn")

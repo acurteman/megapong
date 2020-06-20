@@ -48,6 +48,9 @@ margin_bottom = 589.0
 custom_fonts/font = ExtResource( 3 )
 text = "Single Player"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="multiPlayer" type="Button" parent="."]
 margin_left = 210.0
@@ -73,4 +76,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="singlePlayer" to="." method="_on_singlePlayer_pressed"]
+[connection signal="pressed" from="multiPlayer" to="." method="_on_multiPlayer_pressed"]
 [connection signal="pressed" from="exitButton" to="." method="_on_exitButton_pressed"]
