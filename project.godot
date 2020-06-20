@@ -18,12 +18,18 @@ _global_script_class_icons={
 config/name="MegaPong"
 run/main_scene="res://Levels/mainMenu/mainMenu.tscn"
 
+[autoload]
+
+globals="*res://globals.gd"
+
 [display]
 
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/size/fullscreen=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 

@@ -2,12 +2,12 @@
 
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Levels/Arena/Arena.gd" type="Script" id=2]
-[ext_resource path="res://Game_Objects/MidLine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game_Objects/Paddle/Paddle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game_Objects/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game_Objects/Backboard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game_Objects/AI_Paddle/AI_Paddle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game_Objects/Ball/Ball.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Game_Objects/Paddle/Paddle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game_Objects/AI_Paddle/AI_Paddle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game_Objects/MidLine.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game_Objects/Backboard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 
 [node name="Arena" type="Node2D"]
@@ -26,55 +26,54 @@ __meta__ = {
 
 [node name="Paddle" parent="." groups=[
 "paddle",
-] instance=ExtResource( 7 )]
+] instance=ExtResource( 3 )]
 position = Vector2( 196.65, 255.55 )
-collision_mask = 30
 
 [node name="AI_Paddle" parent="." groups=[
 "paddle",
-] instance=ExtResource( 8 )]
+] instance=ExtResource( 5 )]
 position = Vector2( 1815.55, 506.483 )
 collision_mask = 2
 
 [node name="Wall1" parent="." groups=[
 "wall",
 ] instance=ExtResource( 4 )]
-position = Vector2( 0, 1060 )
+position = Vector2( 0, 1080 )
 collision_layer = 4
 collision_mask = 3
 
 [node name="Wall2" parent="." groups=[
 "wall",
 ] instance=ExtResource( 4 )]
+position = Vector2( 0, -20 )
 collision_layer = 4
 collision_mask = 3
 
 [node name="Backboard1" parent="." groups=[
 "backboard",
 "p1Backboard",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
+position = Vector2( -20, 0 )
 collision_layer = 8
 collision_mask = 3
 
 [node name="Backboard2" parent="." groups=[
 "backboard",
 "p2Backboard",
-] instance=ExtResource( 5 )]
-position = Vector2( 1900, 0 )
+] instance=ExtResource( 8 )]
+position = Vector2( 1920, 0 )
 collision_layer = 8
 collision_mask = 3
 
 [node name="BallSpawn" type="Position2D" parent="."]
 position = Vector2( 960, 540 )
 
-[node name="MidLine" parent="." instance=ExtResource( 3 )]
+[node name="MidLine" parent="." instance=ExtResource( 7 )]
 position = Vector2( 960, 510 )
 collision_layer = 16
 
 [node name="Ball" parent="." instance=ExtResource( 6 )]
 position = Vector2( 50.9645, -67.1359 )
-collision_layer = 2
-collision_mask = 13
 
 [node name="quitButton" type="Button" parent="."]
 margin_left = 873.956

@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
-export var speed = 10
-export var lerp_var = .01
+var speed = 10
+var lerp_var = .05
 var velocity = Vector2(0,0)
+
 
 func _ready():
 	pass # Replace with function body.
+
 
 func _physics_process(delta):
 	
@@ -20,8 +22,8 @@ func _physics_process(delta):
 	velocity.y = lerp(velocity.y, -int(UP) + int(DOWN), lerp_var)
 	
 	# Move and check for collision
-	var collision_info = move_and_collide(velocity*speed)
+	var collision = move_and_collide(velocity*speed)
 	
 	# If there is collision, bounce paddle away
-	if collision_info:
-		velocity = velocity.bounce(collision_info.normal)
+	if collision:
+		velocity = velocity.bounce(collision.normal)

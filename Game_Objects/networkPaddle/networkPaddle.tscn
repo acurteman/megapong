@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game_Objects/networkPaddle/networkPaddle.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.43229, 31.8289 )
+
+[node name="networkPaddle" type="KinematicBody2D" groups=[
+"paddle",
+]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"paddle",
+]]
+position = Vector2( -0.498249, 0 )
+shape = SubResource( 1 )
+
+[node name="Outline" type="ColorRect" parent="."]
+margin_left = -8.0
+margin_top = -32.0
+margin_right = 7.0
+margin_bottom = 32.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FillColor" type="ColorRect" parent="."]
+margin_left = -7.0
+margin_top = -31.0
+margin_right = 6.0
+margin_bottom = 31.0
+color = Color( 1, 0.584314, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
